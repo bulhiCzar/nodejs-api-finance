@@ -12,7 +12,7 @@ route.get(
             const list = listId.split(',')
             const arrSend = []
 
-            console.log(req.body)
+            console.log(list)
 
             for (let i=0; i < list.length; i++){
                 const token = list[i]
