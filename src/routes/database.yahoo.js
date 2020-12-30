@@ -17,7 +17,7 @@ route.post(
                 const res = await YahooPrice(token)
                 arrSend.push(res)
             }
-            
+            console.log(arrSend)
 
 
             res.status(200).json({data: arrSend})
