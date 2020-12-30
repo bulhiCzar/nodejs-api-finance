@@ -8,9 +8,10 @@ route.post(
     '/price',
     async (req, res) => {
         try {
-
             const {arr} = req.body
             const arrSend = []
+
+            console.log(arr)
 
             for (let i=0; i < arr.length; i++){
                 const token = arr[i]
