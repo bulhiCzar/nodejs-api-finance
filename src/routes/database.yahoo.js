@@ -11,7 +11,7 @@ route.post(
             const {arr} = req.body
             const arrSend = []
 
-            console.log(arr)
+            console.log(req.body)
 
             for (let i=0; i < arr.length; i++){
                 const token = arr[i]
