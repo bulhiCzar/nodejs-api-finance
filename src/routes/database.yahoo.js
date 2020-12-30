@@ -4,17 +4,18 @@ const {Router} = require('express')
 
 const route = Router()
 
-route.post(
-    '/price',
+route.get(
+    '/price/:id',
     async (req, res) => {
         try {
-            const {arr} = req.body
+            const listId = req.params.id
+            const list = listId.split(',')
             const arrSend = []
 
             console.log(req.body)
 
-            for (let i=0; i < arr.length; i++){
-                const token = arr[i]
+            for (let i=0; i < list.length; i++){
+                const token = list[i]
                 const res = await YahooPrice(token)
                 arrSend.push(res)
             }
