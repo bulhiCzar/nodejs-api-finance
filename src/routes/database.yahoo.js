@@ -10,21 +10,18 @@ route.get(
         try {
             const listId = req.params.id
             const list = listId.split(',')
-            const arrSend = []
-
-            console.log(list)
+            const arr = []
 
             for (let i=0; i < list.length; i++){
                 const token = list[i]
                 const res = await YahooPrice(token)
-                arrSend.push(res)
+                arr.push(res)
             }
-            console.log(arrSend)
 
 
-            res.status(200).json({data: arrSend})
+            res.status(200).json({data: arr})
         } catch (e) {
-            res.status(403).json({m: 'Ошибка какая-то, повторите позже'})
+            res.status(403).json({data: 'Ошибка какая-то, повторите позже'})
         }
     }
 )
