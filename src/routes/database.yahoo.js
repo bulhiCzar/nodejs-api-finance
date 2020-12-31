@@ -27,4 +27,31 @@ route.get(
 )
 
 
+route.post(
+    '/price',
+    async (req, res) => {
+        try {
+            const body = req.body
+            console.log(body)
+            return res.status(200).json({data: ['as']})
+
+            const listId = req.params.id
+            const list = listId.split(',')
+            const arr = []
+
+            for (let i=0; i < list.length; i++){
+                const token = list[i]
+                const res = await YahooPrice(token)
+                arr.push(res)
+            }
+
+
+            res.status(200).json({data: arr})
+        } catch (e) {
+            res.status(403).json({data: 'Ошибка какая-то, повторите позже'})
+        }
+    }
+)
+
+
 module.exports = route
