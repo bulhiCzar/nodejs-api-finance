@@ -9,7 +9,7 @@ const YahooPrice = async (id) => {
         if (!value) return 0
         return value
     } catch (e) {
-        console.log('Ошибка в USAStockGetName')
+        return 'err send yahoo'
     }
 }
 
