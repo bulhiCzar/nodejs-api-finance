@@ -9,7 +9,7 @@ const YahooPrice = async (id) => {
         if (!value) return 'null'
         return value
     } catch (e) {
-        return 'err send yahoo'
+        return 'err yahoo'
     }
 }
 
