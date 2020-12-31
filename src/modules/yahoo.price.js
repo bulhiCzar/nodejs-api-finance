@@ -6,7 +6,7 @@ const YahooPrice = async (id) => {
         const response = await fetch(url)
         const json = await response.json()
         const value = json.quoteSummary.result[0].price.regularMarketPrice.raw
-        if (!value) return 0
+        if (!value) return 'null'
         return value
     } catch (e) {
         return 'err send yahoo'
