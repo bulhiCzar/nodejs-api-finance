@@ -34,15 +34,15 @@ route.post(
             const body = req.body
             console.log(req)
             return res.status(200).json({data: ['as']})
-
-            const list = listId.split(',')
-            const arr = []
-
-            for (let i=0; i < list.length; i++){
-                const token = list[i]
-                const res = await YahooPrice(token)
-                arr.push(res)
-            }
+            //
+            // const list = listId.split(',')
+            // const arr = []
+            //
+            // for (let i=0; i < list.length; i++){
+            //     const token = list[i]
+            //     const res = await YahooPrice(token)
+            //     arr.push(res)
+            // }
 
 
             res.status(200).json({data: arr})
