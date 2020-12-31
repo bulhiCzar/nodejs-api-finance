@@ -32,10 +32,9 @@ route.post(
     async (req, res) => {
         try {
             const body = req.body
-            console.log(body)
+            console.log(req)
             return res.status(200).json({data: ['as']})
 
-            const listId = req.params.id
             const list = listId.split(',')
             const arr = []
 
