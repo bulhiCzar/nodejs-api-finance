@@ -19,6 +19,7 @@ app.use(bodyParser.json())
 app.use(allowCrossDomain)
 
 app.use('/api/yahoo', require('./src/routes/database.yahoo'))
+app.use('/', require('./src/routes/test'))
 
 const start = async () => {
     try {
