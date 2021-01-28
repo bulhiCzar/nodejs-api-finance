@@ -2,7 +2,7 @@ const {Router} = require('express')
 
 const route = Router()
 
-route.get(
+route.post(
     '/',
     async (req, res, next) => {
         try {
