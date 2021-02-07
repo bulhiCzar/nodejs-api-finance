@@ -13,9 +13,13 @@ route.get(
             const arr = []
 
             for (let i=0; i < list.length; i++){
-                const token = list[i]
-                const res = await YahooPrice(token)
-                arr.push(res)
+                try {
+                    const token = list[i]
+                    const res = await YahooPrice(token)
+                    arr.push(res)
+                } catch (e) {
+                    arr.push('error')
+                }
             }
             console.log(arr)
 
