@@ -22,6 +22,7 @@ route.get(
 
             res.status(200).json({data: arr})
         } catch (e) {
+            console.log(e)
             res.status(403).json({data: 'Ошибка какая-то, повторите позже'})
         }
     }
