@@ -7,6 +7,7 @@ const YahooPrice = async (id) => {
         const json = await response.json()
         const value = json.quoteSummary.result[0].price.regularMarketPrice.raw
         if (!value) return 'null'
+        console.log(value)
         return value
     } catch (e) {
         console.log('err yahoo')

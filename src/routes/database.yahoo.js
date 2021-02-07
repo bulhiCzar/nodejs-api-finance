@@ -17,6 +17,7 @@ route.get(
                 const res = await YahooPrice(token)
                 arr.push(res)
             }
+            console.log(arr)
 
 
             res.status(200).json({data: arr})
