@@ -34,13 +34,12 @@ route.get(
 
 
 route.post(
-    '/price/:id',
+    '/price',
     async (req, res) => {
         try {
-            const listId = req.params.id
-            const list = listId.split(',')
-            const arr = []
+            const {list} = req.body
 
+            const arr = []
             for (let i=0; i < list.length; i++){
                 try {
                     const token = list[i]
@@ -50,7 +49,7 @@ route.post(
                     arr.push('error')
                 }
             }
-            console.log(arr)
+            // console.log(arr)
 
 
             res.status(200).json({data: arr})
