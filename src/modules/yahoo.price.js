@@ -5,12 +5,14 @@ const YahooPrice = async (id) => {
     try {
         const response = await fetch(url)
         const json = await response.json()
-        const value = json.quoteSummary.result[0].price.regularMarketPrice.raw
-        if (!value) return 0
-        console.log(value)
-        return value
+        const price = json.quoteSummary.result[0].price.regularMarketPrice.raw
+        const cap = json.quoteSummary.result[0].price.marketCap.raw
+        if (!price) return { price: 0, cap: 0}
+        return {
+            price,
+            cap
+        }
     } catch (e) {
-        console.log('err yahoo')
         throw e
     }
 }

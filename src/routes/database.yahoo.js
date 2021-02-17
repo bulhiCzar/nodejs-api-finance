@@ -18,7 +18,7 @@ route.get(
                     const res = await YahooPrice(token)
                     arr.push(res)
                 } catch (e) {
-                    arr.push('error')
+                    arr.push({price: 0, cap: 0})
                 }
             }
             console.log(arr)
