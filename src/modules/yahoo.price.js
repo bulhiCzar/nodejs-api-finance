@@ -5,13 +5,17 @@ const YahooPrice = async (id) => {
     try {
         const response = await fetch(url)
         const json = await response.json()
+
         const price = json.quoteSummary.result[0].price.regularMarketPrice.raw
-        const cap = json.quoteSummary.result[0].price.marketCap.raw
+        const capRAW = json.quoteSummary.result[0].price.marketCap.raw
+
+        const cap = (capRAW / 1000000).toFixed(1)
+
         if (!price) return { price: 0, cap: 0}
+
         return {
             price,
-            // cap
-            cap: (cap / 1000000).toFixed(1)
+            cap,
         }
     } catch (e) {
         throw e
