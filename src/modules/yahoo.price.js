@@ -10,7 +10,8 @@ const YahooPrice = async (id) => {
         if (!price) return { price: 0, cap: 0}
         return {
             price,
-            cap
+            // cap
+            cap: (cap / 1000000).toFixed(1)
         }
     } catch (e) {
         throw e
