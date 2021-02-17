@@ -46,10 +46,9 @@ route.post(
                     const res = await YahooPrice(token)
                     arr.push(res)
                 } catch (e) {
-                    arr.push('error')
+                    arr.push(0)
                 }
             }
-            // console.log(arr)
 
 
             res.status(200).json({data: arr})
